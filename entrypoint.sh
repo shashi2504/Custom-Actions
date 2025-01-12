@@ -18,4 +18,3 @@ comment_response=$(curl -sX POST -H "Authorization: token $GITHUB_TOKEN" \
     "https://api.github.com/repos/$GITHUB_REPOSITORY/issues/$pull_request_number/comments")
 
 comment_url=$(echo "$comment_response" | jq --raw-output .html_url)
-echo COMMENT_URL - $comment_url
